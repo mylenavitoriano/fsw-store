@@ -1,0 +1,31 @@
+{
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.suggestSelection": "first",
+  "emmet.excludeLanguages": ["jsxAttributeCompletionStyle"],
+  "files.autoSave": "afterDelay",
+  "explorer.confirmDelete": false,
+  "workbench.startupEditor": "none",
+  "remote.SSH.remotePlatform": {
+    "43.135.217.165": "linux"
+  },
+  "liveServer.settings.donotShowInfoMsg": true,
+  "editor.minimap.enabled": false,
+  "typescript.experimental.tsserver.web.enableProjectWideIntellisense": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.suggest.paths": false,
+  "javascript.suggest.paths": false,
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "typescript.preferences.importModuleSpecifier": "relative"
+}
