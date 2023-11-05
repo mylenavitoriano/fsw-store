@@ -3,6 +3,7 @@ import "@mantine/core/styles.css";
 import { MantineProvider, ColorSchemeScript } from "@mantine/core";
 import StyledComponentsRegistry from "@/lib/styled-components/registry";
 import { GlobalStyles } from "../styles/global";
+import Header from "../components/Header";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,7 +23,8 @@ export default function RootLayout({
       <body>
         <MantineProvider>
           <StyledComponentsRegistry>
-            <GlobalStyles/>
+            <GlobalStyles />
+            <Header />
             {children}
           </StyledComponentsRegistry>
         </MantineProvider>
