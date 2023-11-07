@@ -8,13 +8,13 @@ export const HeaderComponent = styled.header`
   align-items: center;
   padding: 1.65625rem 1.875rem;
 
-  h4{
+  h4 {
     font-size: 1.125rem;
     color: var(--white);
   }
 
-  span{
-    margin-right: .3rem;
+  span {
+    margin-right: 0.3rem;
     font-size: 1.125rem;
     font-weight: 600;
   }

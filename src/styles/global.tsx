@@ -26,14 +26,23 @@ const Globals = createGlobalStyle`
     }
 
     body{
-        background: #252525;
+        background: var(--black-02);
         height: 100%;
+
+        .mantine-Drawer-content, 
+        .mantine-Drawer-header {
+            background: var(--black-02);
+        }
+
+        .mantine-Drawer-title{
+            font-size: 1.125rem;
+            font-weight: 600;
+        }
     }
 
     hmtl{
         height: 100%;
     }
-
 `;
 
 export const GlobalStyles = () => {

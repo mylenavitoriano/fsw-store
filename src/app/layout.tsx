@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
 import "@mantine/core/styles.css";
 import { MantineProvider, ColorSchemeScript } from "@mantine/core";
 import StyledComponentsRegistry from "@/lib/styled-components/registry";
 import { GlobalStyles } from "../styles/global";
 import Header from "../components/Header";
+
+const poppins = Poppins({
+  weight: ["400", "600", "700"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,7 +26,7 @@ export default function RootLayout({
       <head>
         <ColorSchemeScript />
       </head>
-      <body>
+      <body className={poppins.className}>
         <MantineProvider>
           <StyledComponentsRegistry>
             <GlobalStyles />
