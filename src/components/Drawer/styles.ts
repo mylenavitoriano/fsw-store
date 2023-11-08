@@ -16,9 +16,18 @@ export const Navigation = styled.div`
   gap: 0.5rem;
 `;
 
+export const UserInformation = styled.div`
+  margin: 0.5rem 0 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+`;
+
 export const Button = styled(ButtonMantine)`
   width: 100%;
   background: transparent;
+  padding: 0;
 
   .mantine-Button-label {
     width: 100%;

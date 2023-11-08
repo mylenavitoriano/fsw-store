@@ -5,6 +5,7 @@ import { MantineProvider, ColorSchemeScript } from "@mantine/core";
 import StyledComponentsRegistry from "@/lib/styled-components/registry";
 import { GlobalStyles } from "../styles/global";
 import Header from "../components/Header";
+import { AuthProvider } from "../providers/auth";
 
 const poppins = Poppins({
   weight: ["400", "600", "700"],
@@ -27,13 +28,15 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body className={poppins.className}>
-        <MantineProvider>
-          <StyledComponentsRegistry>
-            <GlobalStyles />
-            <Header />
-            {children}
-          </StyledComponentsRegistry>
-        </MantineProvider>
+        <AuthProvider>
+          <MantineProvider>
+            <StyledComponentsRegistry>
+              <GlobalStyles />
+              <Header />
+              {children}
+            </StyledComponentsRegistry>
+          </MantineProvider>
+        </AuthProvider>
       </body>
     </html>
   );

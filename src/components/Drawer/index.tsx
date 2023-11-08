@@ -1,10 +1,20 @@
-import { LuHome, LuListOrdered, LuLogIn, LuPercent } from "react-icons/lu";
+"use client";
+
+import {
+  LuHome,
+  LuListOrdered,
+  LuLogIn,
+  LuLogOut,
+  LuPercent,
+} from "react-icons/lu";
 import {
   Drawer as DrawerComponent,
   Button as ButtonComponent,
   Navigation,
+  UserInformation,
 } from "./styles";
-import { Text } from "@mantine/core";
+import { Avatar, Text } from "@mantine/core";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 interface DrawerProps {
   opened: boolean;
@@ -12,13 +22,44 @@ interface DrawerProps {
 }
 
 export const Drawer = ({ opened, close }: DrawerProps) => {
+  const { status, data } = useSession();
+
+  const handleLoginClick = async () => {
+    await signIn();
+  };
+
+  const handleLogouClick = async () => {
+    await signOut();
+  };
+
   return (
-    <DrawerComponent opened={opened} onClose={close} title="Menu">
+    <DrawerComponent  size="xs" opened={opened} onClose={close} title="Menu">
+      
+
       <Navigation>
-        <ButtonComponent>
-          <LuLogIn size={16} />
-          <Text>Fazer Login</Text>
-        </ButtonComponent>
+        {status === "authenticated" && data?.user?.image && (
+          <UserInformation>
+            <Avatar
+              src={data?.user?.image}
+              alt={data?.user?.name ? data?.user?.name : "Sem imagem"}
+            ></Avatar>
+            <Text>{data?.user?.name}</Text>
+          </UserInformation>
+        )}
+
+        {status === "unauthenticated" && (
+          <ButtonComponent onClick={handleLoginClick}>
+            <LuLogIn size={16} />
+            <Text>Fazer Login</Text>
+          </ButtonComponent>
+        )}
+
+        {status === "authenticated" && (
+          <ButtonComponent onClick={handleLogouClick}>
+            <LuLogOut size={16} />
+            <Text>Fazer Logout</Text>
+          </ButtonComponent>
+        )}
 
         <ButtonComponent>
           <LuHome size={16} />
