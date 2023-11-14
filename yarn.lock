@@ -226,6 +226,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mantine/carousel@npm:^7.2.2":
+  version: 7.2.2
+  resolution: "@mantine/carousel@npm:7.2.2"
+  peerDependencies:
+    "@mantine/core": 7.2.2
+    "@mantine/hooks": 7.2.2
+    embla-carousel-react: ^7.0.0
+    react: ^18.2.0
+  checksum: 2121992c61ffe0d7cb75882886ea9629297a21f408d3dc0bc2f99b648ff87e534776abd369fdccac29ea3189b9f2eebea6db12e3bf6d1658dfab330d78450ea3
+  languageName: node
+  linkType: hard
+
 "@mantine/core@npm:^7.2.0":
   version: 7.2.0
   resolution: "@mantine/core@npm:7.2.0"
@@ -1129,6 +1141,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"embla-carousel-react@npm:^7.1.0":
+  version: 7.1.0
+  resolution: "embla-carousel-react@npm:7.1.0"
+  dependencies:
+    embla-carousel: "npm:7.1.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.1 || ^18.0.0
+  checksum: 05e33fdb1062fde0164a0685163a5212f8e8f343fbe28e9a8e2348c989d8825d80fdcecfed485c7617d27f8f5d72b393612a3dd13ef9cffc02ef0cf21109ba51
+  languageName: node
+  linkType: hard
+
+"embla-carousel@npm:7.1.0":
+  version: 7.1.0
+  resolution: "embla-carousel@npm:7.1.0"
+  checksum: 3fcfe5b287c5d09d35dac76b6612567cf6f15abdae0bbf7d10754db9f732dd90cdfdf5bc7405d8fb3f65542bdead09971e93e024a0db9b3f1fcc653a70e733bc
+  languageName: node
+  linkType: hard
+
 "emoji-regex@npm:^9.2.2":
   version: 9.2.2
   resolution: "emoji-regex@npm:9.2.2"
@@ -1637,6 +1667,7 @@ __metadata:
   resolution: "fsw-store@workspace:."
   dependencies:
     "@auth/prisma-adapter": "npm:^1.0.5"
+    "@mantine/carousel": "npm:^7.2.2"
     "@mantine/core": "npm:^7.2.0"
     "@mantine/hooks": "npm:^7.2.0"
     "@prisma/client": "npm:^5.5.2"
@@ -1645,6 +1676,7 @@ __metadata:
     "@types/react-dom": "npm:^18"
     "@types/styled-components": "npm:^5.1.29"
     autoprefixer: "npm:^10"
+    embla-carousel-react: "npm:^7.1.0"
     eslint: "npm:^8"
     eslint-config-next: "npm:14.0.0"
     next: "npm:14.0.0"

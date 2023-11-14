@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import "@mantine/core/styles.css";
 import { MantineProvider, ColorSchemeScript } from "@mantine/core";
 import StyledComponentsRegistry from "@/lib/styled-components/registry";
 import { GlobalStyles } from "../styles/global";
 import Header from "../components/Header";
 import { AuthProvider } from "../providers/auth";
+
+import "@mantine/core/styles.css";
+import '@mantine/carousel/styles.css';
 
 const poppins = Poppins({
   weight: ["400", "600", "700"],
@@ -41,3 +43,7 @@ export default function RootLayout({
     </html>
   );
 }
+
+
+//naquela parte de other, sao utilitarios do mantine, como o mantine/core e o mantine/hooks, cada um deles tem um arquivo
+//css com configuraçoes basicas pra funcionar, sempre que for utilizar um deles, verifica na docs se é nessessario

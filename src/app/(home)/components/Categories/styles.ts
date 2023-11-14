@@ -8,4 +8,5 @@ export const Container = styled(ContainerMantine)`
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 1rem;
     row-gap: .5rem;
+    padding: 0;
 `;

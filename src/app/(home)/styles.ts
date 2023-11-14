@@ -6,8 +6,13 @@ export const Container = styled.div`
   padding: 1.25rem;
 `;
 
-export const DivCategories = styled.div`
+export const DivComponents = styled.div`
   margin-top: 1.875rem;
+
+  h1{
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+  }
 `;
 
 export const BannerImage = styled(Image)`

@@ -22,7 +22,7 @@ const CategoryItem = ({ category }: CategoryItemProps) => {
         fullWidth
         variant="outline"
         color="rgba(42, 42, 42, 1)"
-        radius="sm"
+        radius="md"
         leftSection={categoryIcon[category.slug as keyof typeof categoryIcon]}
         >
         <Text c="white" span={true} size="xs" fw={700} tt="capitalize">

@@ -1,8 +1,18 @@
-"use client";
+import { Text } from "@mantine/core";
+import { prismaClient } from "../../lib/prisma";
 import Categories from "./components/Categories";
-import { BannerImage, Container, DivCategories } from "./styles";
+import ProductList from "./components/ProductList";
+import { BannerImage, Container, DivComponents } from "./styles";
 
-export default function Home() {
+export default async function Home() {
+  const deals = await prismaClient.product.findMany({
+    where: {
+      discountPercentage: {
+        gt: 0,
+      },
+    },
+  });
+
   return (
     <Container>
       <BannerImage
@@ -13,11 +23,16 @@ export default function Home() {
         className="banner"
         alt="Até 55% de Desconto só esse mês!"
       />
-      
-      <DivCategories>
+
+      <DivComponents>
         {/* @ts-expect-error Server Component */}
         <Categories />
-      </DivCategories>
+      </DivComponents>
+
+      <DivComponents>
+        <h1>OFERTAS</h1>
+        <ProductList products={deals} />
+      </DivComponents>
     </Container>
   );
 }
