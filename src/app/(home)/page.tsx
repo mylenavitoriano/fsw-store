@@ -1,5 +1,6 @@
 "use client";
-import { BannerImage, Container } from "./styles";
+import Categories from "./components/Categories";
+import { BannerImage, Container, DivCategories } from "./styles";
 
 export default function Home() {
   return (
@@ -12,6 +13,11 @@ export default function Home() {
         className="banner"
         alt="Até 55% de Desconto só esse mês!"
       />
+      
+      <DivCategories>
+        {/* @ts-expect-error Server Component */}
+        <Categories />
+      </DivCategories>
     </Container>
   );
 }
