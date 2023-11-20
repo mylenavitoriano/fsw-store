@@ -34,12 +34,12 @@ const ProductItem = ({ product }: ProductItemProps) => {
 
         {product.discountPercentage > 0 ? (
           <TextPrice>
-            <Text size="md" fw={700}>R$ {product.totalPrice.toFixed(2)}</Text>
-            <Text size="sm" td="line-through" c="dimmed">R$ {Number(product.basePrice).toFixed(2)}</Text>
+            <Text size="md" fw={700}>{Number(product.totalPrice).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</Text>
+            <Text size="sm" td="line-through" c="dimmed">{Number(product.basePrice).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</Text>
           </TextPrice>
         ): (
           <TextPrice>
-            <Text size="md" fw={700}>R$ {Number(product.basePrice).toFixed(2)}</Text>
+            <Text size="md" fw={700}>{Number(product.basePrice).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</Text>
           </TextPrice>
         )}
       </CardText>
