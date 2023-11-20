@@ -1,4 +1,3 @@
-import { Text } from "@mantine/core";
 import { prismaClient } from "../../lib/prisma";
 import Categories from "./components/Categories";
 import ProductList from "./components/ProductList";
@@ -33,6 +32,15 @@ export default async function Home() {
         <h1>OFERTAS</h1>
         <ProductList products={deals} />
       </DivComponents>
+
+      <BannerImage
+        src="/banner-home-02.png"
+        height={0}
+        width={0}
+        sizes="100vw"
+        className="banner"
+        alt="Até 55% de Desconto em Mouses"
+      />
     </Container>
   );
 }
