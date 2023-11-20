@@ -20,12 +20,14 @@ const ProductItem = ({ product }: ProductItemProps) => {
         />
       </CardImage>
 
-      <BadgeDiscountPercentage color="rgba(80, 51, 195, 1)">
-        <Text size="sm" fw={700}>
-          <LuArrowDown size={14}/>
-          {product.discountPercentage}%
-        </Text>
-      </BadgeDiscountPercentage>
+      {product.discountPercentage > 0 && (
+        <BadgeDiscountPercentage color="rgba(80, 51, 195, 1)">
+          <Text size="sm" fw={700}>
+            <LuArrowDown size={14}/>
+            {product.discountPercentage}%
+          </Text>
+        </BadgeDiscountPercentage>
+      )} 
 
       <CardText>
         <Text size="xs" truncate="end">
