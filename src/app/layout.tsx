@@ -8,6 +8,7 @@ import { AuthProvider } from "../providers/auth";
 
 import "@mantine/core/styles.css";
 import '@mantine/carousel/styles.css';
+import Footer from "../components/Footer";
 
 const poppins = Poppins({
   weight: ["400", "600", "700"],
@@ -36,6 +37,7 @@ export default function RootLayout({
               <GlobalStyles />
               <Header />
               {children}
+              <Footer/>
             </StyledComponentsRegistry>
           </MantineProvider>
         </AuthProvider>
