@@ -8,14 +8,14 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 9.75rem;
+  max-width: 10.625rem;
 `;
 
 export const CardImage = styled.div`
   background: var(--black-01);
   border-radius: 0.5rem;
   height: 10.625rem;
-  width: 9.75rem;
+  width: 10.625rem;
   display: flex;
   align-items: center;
   justify-content: center;

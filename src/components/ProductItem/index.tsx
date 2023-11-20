@@ -43,13 +43,13 @@ const ProductItem = ({ product }: ProductItemProps) => {
 
         {product.discountPercentage > 0 ? (
           <TextPrice>
-            <Text size="sm" truncate="end" fw={700}>
+            <Text size="sm" fw={700}>
               {Number(product.totalPrice).toLocaleString("pt-br", {
                 style: "currency",
                 currency: "BRL",
               })}
             </Text>
-            <Text size="xs" truncate="end" td="line-through" c="dimmed">
+            <Text size="xs" td="line-through" c="dimmed">
               {Number(product.basePrice).toLocaleString("pt-br", {
                 style: "currency",
                 currency: "BRL",
@@ -58,7 +58,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
           </TextPrice>
         ) : (
           <TextPrice>
-            <Text size="md" truncate="end" fw={700}>
+            <Text size="md" fw={700}>
               {Number(product.basePrice).toLocaleString("pt-br", {
                 style: "currency",
                 currency: "BRL",
