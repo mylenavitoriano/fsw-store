@@ -1,4 +1,11 @@
-import { BadgeDiscountPercentage, Card, CardImage, CardText, ImageProduct, TextPrice } from "./styles";
+import {
+  BadgeDiscountPercentage,
+  Card,
+  CardImage,
+  CardText,
+  ImageProduct,
+  TextPrice,
+} from "./styles";
 import { Text } from "@mantine/core";
 import { ProductWithTotalPrice } from "../../helpers/product";
 import { LuArrowDown } from "react-icons/lu";
@@ -23,11 +30,11 @@ const ProductItem = ({ product }: ProductItemProps) => {
       {product.discountPercentage > 0 && (
         <BadgeDiscountPercentage color="rgba(80, 51, 195, 1)">
           <Text size="sm" fw={700}>
-            <LuArrowDown size={14}/>
+            <LuArrowDown size={14} />
             {product.discountPercentage}%
           </Text>
         </BadgeDiscountPercentage>
-      )} 
+      )}
 
       <CardText>
         <Text size="xs" truncate="end">
@@ -36,12 +43,27 @@ const ProductItem = ({ product }: ProductItemProps) => {
 
         {product.discountPercentage > 0 ? (
           <TextPrice>
-            <Text size="md" fw={700}>{Number(product.totalPrice).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</Text>
-            <Text size="sm" td="line-through" c="dimmed">{Number(product.basePrice).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</Text>
+            <Text size="sm" truncate="end" fw={700}>
+              {Number(product.totalPrice).toLocaleString("pt-br", {
+                style: "currency",
+                currency: "BRL",
+              })}
+            </Text>
+            <Text size="xs" truncate="end" td="line-through" c="dimmed">
+              {Number(product.basePrice).toLocaleString("pt-br", {
+                style: "currency",
+                currency: "BRL",
+              })}
+            </Text>
           </TextPrice>
-        ): (
+        ) : (
           <TextPrice>
-            <Text size="md" fw={700}>{Number(product.basePrice).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</Text>
+            <Text size="md" truncate="end" fw={700}>
+              {Number(product.basePrice).toLocaleString("pt-br", {
+                style: "currency",
+                currency: "BRL",
+              })}
+            </Text>
           </TextPrice>
         )}
       </CardText>

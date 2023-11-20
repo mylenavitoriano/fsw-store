@@ -39,7 +39,6 @@ export default async function Home() {
       />
 
       <DivComponents>
-        {/* @ts-expect-error Server Component */}
         <Categories />
       </DivComponents>
 
