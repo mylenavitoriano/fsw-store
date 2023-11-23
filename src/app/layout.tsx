@@ -34,10 +34,14 @@ export default function RootLayout({
         <AuthProvider>
           <MantineProvider>
             <StyledComponentsRegistry>
-              <GlobalStyles />
-              <Header />
-              {children}
-              <Footer/>
+              <div className="page">
+                <GlobalStyles />
+                <Header />
+                <main>
+                  {children}
+                </main>
+                <Footer/>
+              </div>
             </StyledComponentsRegistry>
           </MantineProvider>
         </AuthProvider>

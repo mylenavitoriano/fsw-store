@@ -1,5 +1,5 @@
 "use client";
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, styled } from "styled-components";
 
 const Globals = createGlobalStyle`
 
@@ -39,13 +39,24 @@ const Globals = createGlobalStyle`
             font-size: 1.125rem;
             font-weight: 600;
         }
+
+        .page{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
     }
 
     hmtl{
         height: 100%;
+    }
+
+    main{
+        flex: 1;
     }
 `;
 
 export const GlobalStyles = () => {
   return <Globals />;
 };
+    
