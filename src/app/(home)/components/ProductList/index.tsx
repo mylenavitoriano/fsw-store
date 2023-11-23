@@ -16,6 +16,7 @@ const ProductList = ({ products }: ProductListProps) => {
       align="start"
       slideGap="sm"
       withControls={false}
+      containScroll="keepSnaps"
     >
       {products.map((product) => (
         <Carousel.Slide key={product.id}>
