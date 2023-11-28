@@ -8,7 +8,7 @@ export default async function CatalogPage() {
 
   return (
     <ContainerCatalog>
-      <BadgeTitle title="catálogo"></BadgeTitle>
+      <BadgeTitle icon="catálogo" title="catálogo"></BadgeTitle>
 
       <CategoryList>
         {categories.map((category) => (
