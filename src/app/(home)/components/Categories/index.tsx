@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { prismaClient } from "../../../../lib/prisma";
 import CategoryItem from "../CategoryItem";
 import { Container } from "./styles";
@@ -8,7 +9,9 @@ const Categories = async () => {
   return (
     <Container>
       {categories.map((category) => (
-        <CategoryItem key={category.id} category={category} />
+        <Link href={`/category/${category.slug}`} key={category.id}>
+          <CategoryItem  category={category} />
+        </Link>
       ))}
     </Container>
   );
