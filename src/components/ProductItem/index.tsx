@@ -25,16 +25,16 @@ const ProductItem = ({ product }: ProductItemProps) => {
           sizes="100vw"
           alt={product.name}
         />
-      </CardImage>
 
-      {product.discountPercentage > 0 && (
-        <BadgeDiscountPercentage color="rgba(80, 51, 195, 1)">
-          <Text size="sm" fw={700}>
-            <LuArrowDown size={14} />
-            {product.discountPercentage}%
-          </Text>
-        </BadgeDiscountPercentage>
-      )}
+        {product.discountPercentage > 0 && (
+          <BadgeDiscountPercentage color="rgba(80, 51, 195, 1)">
+            <Text size="sm" fw={700}>
+              <LuArrowDown size={14} />
+              {product.discountPercentage}%
+            </Text>
+          </BadgeDiscountPercentage>
+        )}
+      </CardImage>
 
       <CardText>
         <Text size="xs" truncate="end">

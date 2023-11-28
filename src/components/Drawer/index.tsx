@@ -15,6 +15,7 @@ import {
 } from "./styles";
 import { Avatar, Text } from "@mantine/core";
 import { signIn, signOut, useSession } from "next-auth/react";
+import Link from "next/link";
 
 interface DrawerProps {
   opened: boolean;
@@ -61,15 +62,19 @@ export const Drawer = ({ opened, close }: DrawerProps) => {
           </ButtonComponent>
         )}
 
-        <ButtonComponent>
-          <LuHome size={16} />
-          <Text>Início</Text>
-        </ButtonComponent>
+        <Link href={'/'}>
+          <ButtonComponent>
+            <LuHome size={16} />
+            <Text>Início</Text>
+          </ButtonComponent>
+        </Link>
 
-        <ButtonComponent>
-          <LuListOrdered size={16} />
-          <Text>Catálogo</Text>
-        </ButtonComponent>
+        <Link href={'/catalog'}>
+          <ButtonComponent>
+            <LuListOrdered size={16} />
+            <Text>Catálogo</Text>
+          </ButtonComponent>
+        </Link>
 
         <ButtonComponent>
           <LuPercent size={16} />

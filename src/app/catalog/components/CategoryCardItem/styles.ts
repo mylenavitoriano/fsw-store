@@ -5,6 +5,7 @@ import { styled } from "styled-components";
 export const CardItem = styled.div`
   display: flex;
   flex-direction: column;
+  text-decoration: none;
   
   &:hover{
     cursor: pointer;

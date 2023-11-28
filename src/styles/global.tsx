@@ -25,6 +25,11 @@ const Globals = createGlobalStyle`
         box-sizing: border-box;
     }
 
+    a{
+        text-decoration: none;
+        color: var(--white);
+    }
+
     body{
         background: var(--black-02);
         height: 100%;
