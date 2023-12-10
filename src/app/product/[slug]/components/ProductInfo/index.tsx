@@ -108,25 +108,27 @@ const ProductInfo = ({
 
       <ShippingFee>
         <GroupLeft>
-            <FaTruckFast size={30}/>
+          <FaTruckFast size={30} />
 
-            <div>
-            <Text>
-                Entrega via{" "}
-                <Text span={true} fw={600} fs="italic">
+          <div>
+            <Text size="sm">
+              Entrega via{" "}
+              <Text span={true} fw={600} fs="italic">
                 FSPacket®
-                </Text>
+              </Text>
             </Text>
-            <Text c="rgba(129,98,255,1)">
-                Envio para{" "}
-                <Text span={true} fw={600}>
+            <Text c="rgba(129,98,255,1)" size="sm">
+              Envio para{" "}
+              <Text span={true} fw={600}>
                 todo Brasil
-                </Text>
+              </Text>
             </Text>
-            </div>
+          </div>
         </GroupLeft>
 
-        <Text fw={600}>Frete grátis</Text>
+        <Text fw={600} size="sm">
+          Frete grátis
+        </Text>
       </ShippingFee>
     </ContainerProductInfo>
   );
