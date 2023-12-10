@@ -1,8 +1,8 @@
 "use client";
 import { Product } from "@prisma/client";
 import { Carousel } from "./styles";
-import ProductItem from "../../../../components/ProductItem";
-import { computeProductTotalPrice } from "../../../../helpers/product";
+import ProductItem from "../ProductItem";
+import { computeProductTotalPrice } from "../../helpers/product";
 
 interface ProductListProps {
   products: Product[];

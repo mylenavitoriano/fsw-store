@@ -1,8 +1,10 @@
+import { Text } from "@mantine/core";
+import ProductList from "../../../components/ProductList";
 import { computeProductTotalPrice } from "../../../helpers/product";
 import { prismaClient } from "../../../lib/prisma";
 import ProductImages from "./components/ProductImages";
 import ProductInfo from "./components/ProductInfo";
-import { ContainerProduct } from "./styles";
+import { ContainerProduct, ContainerProducts } from "./styles";
 
 interface ProductDatailsPageProps {
   params: {
@@ -17,6 +19,19 @@ const ProductDetailsPage = async ({
     where: {
       slug: slug,
     },
+    include: {
+      category: {
+        include: {
+          products: {
+            where: {
+              slug: {
+                not: slug,
+              },
+            },
+          },
+        },
+      },
+    },
   });
 
   if (!product) return null;
@@ -27,7 +42,14 @@ const ProductDetailsPage = async ({
     
       <ContainerProduct>
         <ProductInfo product={computeProductTotalPrice(product)}/>
+
+        <ContainerProducts>
+          <Text fw={600} tt="uppercase">Produtos Recomendados</Text>
+          <ProductList products={ product.category.products }/>
+        </ContainerProducts>
       </ContainerProduct>
+
+      
     </>
   );
 };

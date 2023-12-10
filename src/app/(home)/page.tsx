@@ -1,6 +1,6 @@
 import { prismaClient } from "../../lib/prisma";
 import Categories from "./components/Categories";
-import ProductList from "./components/ProductList";
+import ProductList from "../../components/ProductList";
 import { BannerImage, Container, DivComponents } from "./styles";
 
 export default async function Home() {
