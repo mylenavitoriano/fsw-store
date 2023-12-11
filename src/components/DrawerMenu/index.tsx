@@ -22,7 +22,7 @@ interface DrawerProps {
   close: () => void;
 }
 
-export const Drawer = ({ opened, close }: DrawerProps) => {
+export const DrawerMenu = ({ opened, close }: DrawerProps) => {
   const { status, data } = useSession();
 
   const handleLoginClick = async () => {
@@ -34,9 +34,7 @@ export const Drawer = ({ opened, close }: DrawerProps) => {
   };
 
   return (
-    <DrawerComponent  size="xs" opened={opened} onClose={close} title="Menu">
-      
-
+    <DrawerComponent size="xs" opened={opened} onClose={close} title="Menu">
       <Navigation>
         {status === "authenticated" && data?.user?.image && (
           <UserInformation>
@@ -62,14 +60,14 @@ export const Drawer = ({ opened, close }: DrawerProps) => {
           </ButtonComponent>
         )}
 
-        <Link href={'/'}>
+        <Link href={"/"}>
           <ButtonComponent>
             <LuHome size={16} />
             <Text>Início</Text>
           </ButtonComponent>
         </Link>
 
-        <Link href={'/catalog'}>
+        <Link href={"/catalog"}>
           <ButtonComponent>
             <LuListOrdered size={16} />
             <Text>Catálogo</Text>

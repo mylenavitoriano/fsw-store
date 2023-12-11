@@ -4,7 +4,7 @@ import { HeaderComponent, Button } from "./styles";
 import { Text, Title } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 
-import { Drawer } from "../Drawer";
+import { DrawerMenu } from "../DrawerMenu";
 import Link from "next/link";
 
 const Header = () => {
@@ -33,7 +33,7 @@ const Header = () => {
         <LuShoppingCart size={16} />
       </Button>
 
-      <Drawer opened={opened} close={close} />
+      <DrawerMenu opened={opened} close={close} />
     </HeaderComponent>
   );
 };
