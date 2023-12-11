@@ -7,8 +7,9 @@ import Header from "../components/Header";
 import { AuthProvider } from "../providers/auth";
 
 import "@mantine/core/styles.css";
-import '@mantine/carousel/styles.css';
+import "@mantine/carousel/styles.css";
 import Footer from "../components/Footer";
+import CartProvider from "../providers/cart";
 
 const poppins = Poppins({
   weight: ["400", "600", "700"],
@@ -32,24 +33,23 @@ export default function RootLayout({
       </head>
       <body className={poppins.className}>
         <AuthProvider>
-          <MantineProvider>
-            <StyledComponentsRegistry>
-              <div className="page">
-                <GlobalStyles />
-                <Header />
-                <main>
-                  {children}
-                </main>
-                <Footer/>
-              </div>
-            </StyledComponentsRegistry>
-          </MantineProvider>
+          <CartProvider>
+            <MantineProvider>
+              <StyledComponentsRegistry>
+                <div className="page">
+                  <GlobalStyles />
+                  <Header />
+                  <main>{children}</main>
+                  <Footer />
+                </div>
+              </StyledComponentsRegistry>
+            </MantineProvider>
+          </CartProvider>
         </AuthProvider>
       </body>
     </html>
   );
 }
-
 
 //naquela parte de other, sao utilitarios do mantine, como o mantine/core e o mantine/hooks, cada um deles tem um arquivo
 //css com configuraçoes basicas pra funcionar, sempre que for utilizar um deles, verifica na docs se é nessessario
