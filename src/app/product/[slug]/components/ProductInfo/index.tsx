@@ -17,19 +17,17 @@ import {
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { LuArrowDown } from "react-icons/lu";
 import { FaTruckFast } from "react-icons/fa6";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CartContext } from "../../../../../providers/cart";
 
 interface ProductInfoProps {
-  product: Pick<
-    ProductWithTotalPrice,
-    "basePrice" | "description" | "discountPercentage" | "totalPrice" | "name"
-  >;
+  product: ProductWithTotalPrice;
 }
 
-const ProductInfo = ({
-  product: { basePrice, totalPrice, description, discountPercentage, name },
-}: ProductInfoProps) => {
+const ProductInfo = ({product}: ProductInfoProps) => {
   const [quantity, setQuantity] = useState(1);
+
+  const {addProductToCart} = useContext(CartContext);
 
   const handleDecreaseQuantity = () => {
     setQuantity((prev) => (prev == 1 ? prev : prev - 1));
@@ -39,32 +37,36 @@ const ProductInfo = ({
     setQuantity((prev) => prev + 1);
   };
 
+  const handleAddToCartClick = () => {
+    addProductToCart({ ...product, quantity })
+  }
+
   return (
     <ContainerProductInfo>
-      <Text size="lg">{name}</Text>
+      <Text size="lg">{product.name}</Text>
 
       <InfoPrice>
         <CurrentPrice>
           <Text size="xl" fw={700}>
-            {Number(totalPrice).toLocaleString("pt-br", {
+            {Number(product.totalPrice).toLocaleString("pt-br", {
               style: "currency",
               currency: "BRL",
             })}
           </Text>
-          {discountPercentage > 0 && (
+          {product.discountPercentage > 0 && (
             <BadgeDiscountPercentage color="rgba(80, 51, 195, 1)">
               <Text size="xs" fw={700}>
                 <LuArrowDown size={14} />
-                {discountPercentage}%
+                {product.discountPercentage}%
               </Text>
             </BadgeDiscountPercentage>
           )}
         </CurrentPrice>
-        {discountPercentage > 0 && (
+        {product.discountPercentage > 0 && (
           <Text size="sm" c="dimmed">
             De:{" "}
             <Text span td="line-through">
-              {Number(basePrice).toLocaleString("pt-br", {
+              {Number(product.basePrice).toLocaleString("pt-br", {
                 style: "currency",
                 currency: "BRL",
               })}
@@ -98,11 +100,11 @@ const ProductInfo = ({
           Descrição
         </Text>
         <Text c="dimmed" size="sm">
-          {description}
+          {product.description}
         </Text>
       </GroupDescription>
 
-      <Button tt="uppercase" color="rgba(80, 51, 195, 1)" radius="md">
+      <Button tt="uppercase" color="rgba(80, 51, 195, 1)" radius="md" onClick={handleAddToCartClick}>
         Adicionar ao carrinho
       </Button>
 

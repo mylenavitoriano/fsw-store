@@ -6,13 +6,15 @@ import { useDisclosure } from "@mantine/hooks";
 
 import { DrawerMenu } from "../DrawerMenu";
 import Link from "next/link";
+import { DrawerShoppingCart } from "../DrawerShoppingCart";
 
 const Header = () => {
-  const [opened, { open, close }] = useDisclosure(false);
+  const [openedMenu, { open: openMenu, close: closeMenu }] = useDisclosure(false);
+  const [openedShoppingCart, { open: openShoppingCart, close: closeShoppingCart }] = useDisclosure(false);
 
   return (
     <HeaderComponent>
-      <Button onClick={open}>
+      <Button onClick={openMenu}>
         <LuMenu size={16} />
       </Button>
 
@@ -29,11 +31,12 @@ const Header = () => {
         </Title>
       </Link>
 
-      <Button>
+      <Button onClick={openShoppingCart}>
         <LuShoppingCart size={16} />
       </Button>
 
-      <DrawerMenu opened={opened} close={close} />
+      <DrawerMenu opened={openedMenu} close={closeMenu} />
+      <DrawerShoppingCart opened={openedShoppingCart} close={closeShoppingCart} />
     </HeaderComponent>
   );
 };
