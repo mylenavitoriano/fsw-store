@@ -20,6 +20,8 @@ import BadgeTitle from "../BadgeTitle";
 
 import { useContext } from "react";
 import { CartContext } from "../../providers/cart";
+import CartItem from "../CartItem";
+import { computeProductTotalPrice } from "../../helpers/product";
 
 interface DrawerProps {
   opened: boolean;
@@ -43,8 +45,8 @@ export const DrawerShoppingCart = ({ opened, close }: DrawerProps) => {
       </HeaderTitle>
 
       <Navigation>
-        {products.map((product) => (
-          <h1 key={product.id}>{product.name}</h1>
+        {products.map((item) => (
+          <CartItem key={item.id} product={computeProductTotalPrice(item as any) as any} />
         ))}
       </Navigation>
     </DrawerComponent>
