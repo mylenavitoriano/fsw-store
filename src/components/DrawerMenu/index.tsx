@@ -34,7 +34,7 @@ export const DrawerMenu = ({ opened, close }: DrawerProps) => {
   };
 
   return (
-    <DrawerComponent size="xs" opened={opened} onClose={close} title="Menu">
+    <DrawerComponent size="md" opened={opened} onClose={close} title="Menu">
       <Navigation>
         {status === "authenticated" && data?.user?.image && (
           <UserInformation>

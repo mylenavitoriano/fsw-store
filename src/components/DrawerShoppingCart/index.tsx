@@ -33,7 +33,7 @@ export const DrawerShoppingCart = ({ opened, close }: DrawerProps) => {
 
   return (
     <DrawerComponent
-      size="xs"
+      size="md"
       position="right"
       opened={opened}
       onClose={close}

@@ -17,9 +17,10 @@ export const HeaderTitle = styled.div`
 
 export const Navigation = styled.div`
   margin-top: 1.875rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
 `;
 
 export const UserInformation = styled.div`

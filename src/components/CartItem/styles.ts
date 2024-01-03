@@ -1,14 +1,19 @@
 import Image from "next/image";
 import styled from "styled-components";
+import { Button as ButtonMantine } from "@mantine/core";
+
 
 export const ContainerCartItem = styled.div`
     display: flex;
-
+    gap: .5rem;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 `;
 
 export const RigthBlock = styled.div`
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 1rem;
 `;
 
@@ -30,11 +35,32 @@ export const ImageCartItem = styled(Image)`
     object-fit: contain;
 `;
 
+export const TextPrice = styled.div`
+    display: flex;
+    align-items: flex-end;
+    gap: .25rem;
+`
+
+export const GroupButtonsAmount = styled.div`
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-top: .5rem;
+`;
+
+export const ButtonQuantity = styled(ButtonMantine)`
+  color: #fff;
+  border-color: var(--dark-gray);
+  padding: 6px;
+`;
+
 export const DescriptionProduct = styled.div`
     display: flex;
     flex-direction: column;
 `;
 
 export const LeftBlock =  styled.div`
-
+    button{
+        padding: .5rem;
+    }
 `;
