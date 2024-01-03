@@ -21,10 +21,15 @@ interface CartItemProps {
 
 const CartItem = ({ product }: CartItemProps) => {
     const {decreaseProductQuantity} = useContext(CartContext)
+    const {incriseProductQuantity} = useContext(CartContext)
 
 
     const handleDecreaseProductQuantityClick = () => {
         decreaseProductQuantity(product.id)
+    }
+
+    const handleIncreaseProductQuantityClick = () => {
+        incriseProductQuantity(product.id)
     }
   return (
     <ContainerCartItem>
@@ -74,6 +79,7 @@ const CartItem = ({ product }: CartItemProps) => {
                 <ButtonQuantity
                 variant="outline"
                 size="xs"
+                onClick={handleIncreaseProductQuantityClick}
                 >
                     <IoIosArrowForward size={12} />
                 </ButtonQuantity>
