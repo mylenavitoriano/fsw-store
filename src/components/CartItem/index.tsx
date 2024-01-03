@@ -20,9 +20,7 @@ interface CartItemProps {
 }
 
 const CartItem = ({ product }: CartItemProps) => {
-    const {decreaseProductQuantity} = useContext(CartContext)
-    const {incriseProductQuantity} = useContext(CartContext)
-
+    const { decreaseProductQuantity, incriseProductQuantity, removeProductFromCart } = useContext(CartContext);
 
     const handleDecreaseProductQuantityClick = () => {
         decreaseProductQuantity(product.id)
@@ -31,6 +29,11 @@ const CartItem = ({ product }: CartItemProps) => {
     const handleIncreaseProductQuantityClick = () => {
         incriseProductQuantity(product.id)
     }
+
+    const removeProductQuantityClick = () => {
+        removeProductFromCart(product.id)
+    }
+
   return (
     <ContainerCartItem>
       <RigthBlock>
@@ -88,7 +91,7 @@ const CartItem = ({ product }: CartItemProps) => {
       </RigthBlock>
 
       <LeftBlock>
-        <Button variant="outline" color="#2A2A2A">
+        <Button variant="outline" color="#2A2A2A" onClick={removeProductQuantityClick}>
           <LuTrash color={"#FFF"} size={16} />
         </Button>
       </LeftBlock>
