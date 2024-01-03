@@ -1,5 +1,5 @@
 import { Text, Button } from "@mantine/core";
-import { CartProduct } from "../../providers/cart";
+import { CartContext, CartProduct } from "../../providers/cart";
 import {
   ContainerCartImage,
   ContainerCartItem,
@@ -13,12 +13,19 @@ import {
 } from "./styles";
 import { LuTrash } from "react-icons/lu";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { useContext } from "react";
 
 interface CartItemProps {
   product: CartProduct;
 }
 
 const CartItem = ({ product }: CartItemProps) => {
+    const {decreaseProductQuantity} = useContext(CartContext)
+
+
+    const handleDecreaseProductQuantityClick = () => {
+        decreaseProductQuantity(product.id)
+    }
   return (
     <ContainerCartItem>
       <RigthBlock>
@@ -57,6 +64,7 @@ const CartItem = ({ product }: CartItemProps) => {
                 <ButtonQuantity
                 variant="outline"
                 size="xs"
+                onClick={handleDecreaseProductQuantityClick}
                 >
                     <IoIosArrowBack size={12} />
                 </ButtonQuantity>
